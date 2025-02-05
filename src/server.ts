@@ -30,7 +30,10 @@ app.get('/api/classify-number', async (req: Request, res: Response) => {
         return res.status(400).json(errorResponse);
     }
 
-    const num = parseInt(numberParam as string);
+    console.log(numberParam)
+
+    const num = Number(numberParam);
+    console.log(num);
     if (isNaN(num)) {
         const errorResponse: ErrorResponse = {
             number: numberParam as string,
