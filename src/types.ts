@@ -8,6 +8,6 @@ export interface NumberResponse {
 }
 
 export interface ErrorResponse {
-    number: string | number;
+    number: string | number | null;
     error: boolean;
 }

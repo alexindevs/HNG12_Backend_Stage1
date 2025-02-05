@@ -22,6 +22,14 @@ async function getNumberFact(number: number): Promise<string> {
 app.get('/api/classify-number', async (req: Request, res: Response) => {
     const numberParam = req.query.number;
 
+    if(!numberParam) {
+        const errorResponse: ErrorResponse = {
+            number: null,
+            error: true
+        };
+        return res.status(400).json(errorResponse);
+    }
+
     const num = parseInt(numberParam as string);
     if (isNaN(num)) {
         const errorResponse: ErrorResponse = {
