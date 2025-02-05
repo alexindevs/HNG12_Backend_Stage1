@@ -26,7 +26,7 @@ export class NumberUtils {
     }
 
     static getDigitSum(n: number): number {
-        return n
+        return Math.abs(n)
             .toString()
             .split('')
             .reduce((acc, digit) => acc + parseInt(digit), 0);
